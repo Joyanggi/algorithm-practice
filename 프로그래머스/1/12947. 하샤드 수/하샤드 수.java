@@ -2,22 +2,18 @@ class Solution {
     public boolean solution(int x) {
         boolean answer = true;
 
+        int sumNumberX = 0;
+
         String stringX = String.valueOf(x);
 
-        int y = 0;
-
         for (int i = 0; i < stringX.length(); i++) {
-            int value = stringX.charAt(i) - '0';
-
-            y += value;
+            sumNumberX += stringX.charAt(i) - '0';
         }
 
-        if (x % y == 0) {
-            return answer;
-        } else {
-            answer = false;
+        if (x % sumNumberX != 0) {
+            return false;
         }
-        
+
         return answer;
     }
 }
